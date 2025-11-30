@@ -2,7 +2,14 @@ from packages.modules import *
 
 def main():
     EnvUtils.newSession()
-    print(EnvUtils.session)
+
+    try:
+        __version__ = importlib.metadata.version('Pastel') 
+    except importlib.metadata.PackageNotFoundError:
+        __version__ = '0'
+
+    print(f'Pastel - v{__version__} | Session ID: {EnvUtils.session['id']}\n')
+
     while True:
         entry = input('@pastel> ').strip()
         command = Parser.parse(entry)
