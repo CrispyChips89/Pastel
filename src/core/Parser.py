@@ -1,9 +1,9 @@
-from packages.modules import *
+from src.modules import *
 
 class CommandParser:
     def __init__(self, rawCommand: str, env: Env = None):
         self.rawCommand = rawCommand.strip()
-        self.name: str = ""
+        self.name: str = ''
         self.args: list = []
         self.flags: list[str] = []
         self.isVariable: bool = False
@@ -68,7 +68,7 @@ class CommandParser:
             if self.args:
                 env.session.variables[self.name] = (self.args[0] if len(self.args) == 1 else self.args)
             else:
-                ErrorUtils().ePrint(self.name, 0x000102)
+                errorUtils.ePrint(self.name, 0x010002)
 
     def toDict(self) -> dict:
         return { 'name': self.name, 'args': self.args, 'flags': self.flags }

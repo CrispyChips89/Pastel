@@ -1,4 +1,4 @@
-from packages.modules import *
+from src.modules import *
 
 class Session:
     def __init__(self):
