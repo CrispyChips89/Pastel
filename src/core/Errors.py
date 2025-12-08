@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from src.utils.StringUtils import StringUtils
 
 @dataclass
-class PastelBaseError(Exception):
+class PastelBaseError(BaseException):
     category: str
     message: str
 

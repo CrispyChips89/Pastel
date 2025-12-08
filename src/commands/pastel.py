@@ -1,8 +1,9 @@
 from src.modules import *
-from src.core import Prompt
 
 # Um adentro aqui, é sempre bom usar "magic values" (sla se o termo existe, derivei de "magic numbers"), q é basicamente você colocar valos fixos
 # (nesse caso opções de um switch case) em variáveis bem definidas, deixa mais bonito :)
+
+# boa ideia btww - chip
 
 class Options:
     EDIT_THEME = "et"
@@ -33,4 +34,4 @@ def default(args: None, flags: None) :
         print(MENU_AJUDA)
 
 def changeTitle(title):
-    Prompt.Prompt.prompt.updateConfig("title", title)
+    Prompt.instance.updateConfig("title", title)
